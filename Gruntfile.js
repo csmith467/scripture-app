@@ -121,7 +121,16 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'copy:main'
+    'clean:build',
+    'wiredep',
+    'copy:main',
+    'useminPrepare',
+    'concat',
+    'ngAnnotate',
+    'uglify',
+    'cssmin',
+    'usemin',
+    'clean:temp'
   ]);
 
 };
