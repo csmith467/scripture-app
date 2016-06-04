@@ -6,10 +6,14 @@ var express = require('express');
 var http = require('http');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-
+console.log(process.env.ENV)
 // Read environment variables
-var env = require('node-env-file');
-env('.env');
+if (process.env.ENV != "production") {
+  var env = require('node-env-file');
+  env('.env');
+}
+
+console.log(process.env.ENV)
 
 // Connect to MongoDB
 mongoose.connect([process.env.MONGO_URL]);
