@@ -34,6 +34,10 @@ angular.module('scriptureApp', [
         templateUrl: 'views/verses.html',
         controller: 'VersesCtrl'
       })
+      .when('/verse', {
+        templateUrl: 'views/verse.html',
+        controller: 'VerseCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

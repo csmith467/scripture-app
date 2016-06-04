@@ -8,11 +8,14 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel='stylesheet' href='../bower_components/bootstrap/dist/css/bootstrap.css' />
+    <link rel='stylesheet' href='../bower_components/font-awesome/css/font-awesome.css' />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   </head>
   <body ng-app="scriptureApp">
     <!--[if lt IE 7]>
@@ -20,7 +23,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <!--<div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -45,12 +48,16 @@
           </div>
         </div>
       </div>
+    </div>-->
+    <!--<div class="header-bar">
+      Scripture
     </div>
+    <div class="spacer"></div>-->
 
     <div class="">
       <div ng-view=""></div>
     </div>
-Hello
+
     <!--<div class="footer">
       <div class="container">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
@@ -69,12 +76,15 @@ Hello
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/verses.js"></script>
+        <script src="scripts/controllers/verse.js"></script>
         <!-- endbuild -->
 </body>
 </html>
