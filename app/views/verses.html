@@ -1,9 +1,25 @@
 <div class="header-bar">
-  My Verses
+  <div class="header-bar-left" ng-click="navigate('verses')">
+    <i class="fa fa-chevron-left"></i>
+  </div>
+  <div class="header-bar-center">
+     My Verses
+  </div>
+  <div class="header-bar-right">
+  </div>
 </div>
+
 <div class="header-spacer"></div>
-<div class="verse-result" ng-click="goToVerse()">
-  <div class="verse-result-desc">Philippians 4:6-7</div>
+
+<div class="verse-result" ng-click="goToVerse(verse._id)">
+  <div class="verse-result-desc">View All</div>
+  <div class="verse-result-arrow">
+    <i class="fa fa-chevron-right"></i>
+  </div>
+</div>
+
+<div class="verse-result" ng-repeat="verse in verses" ng-click="goToVerse(verse._id)">
+  <div class="verse-result-desc">{{ verse.book }} {{ verse.chapter }}:{{ verse.verse }}</div>
   <div class="verse-result-arrow">
     <i class="fa fa-chevron-right"></i>
   </div>

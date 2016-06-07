@@ -34,4 +34,4 @@ app.use(express.static(process.env.APP_PATH));
 app.use(bodyParser.json());
 
 // Load routes
-//require('./routes')(app);
+require('./routes')(app);

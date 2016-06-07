@@ -21,9 +21,30 @@ div {
   position: fixed;
   width:100%;
   height:50px;
-  padding:12px;
   background:#3F51B5;
   border-bottom: 1px solid #283593;
+  display: table;
+}
+
+.header-bar-left {
+  display: table-cell;
+  width:50px;
+  color:#F5F5F5;
+  font-size: 20px;
+  text-align: center;
+}
+
+.header-bar-center {
+  display: table-cell;
+  color:#F5F5F5;
+  font-size: 20px;
+  text-align: center;
+  padding-top:12px;
+}
+
+.header-bar-right {
+  display: table-cell;
+  width:50px;
   color:#F5F5F5;
   font-size: 20px;
   text-align: center;
@@ -125,4 +146,10 @@ div {
   font-size: 18px;
   font-weight: 400;
   background: #FFF;
+}
+
+.verse-detail-keywords {
+  margin:20px;
+  margin-top:12px;
+  font-size: 12px;
 }

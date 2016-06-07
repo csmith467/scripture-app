@@ -1,11 +1,19 @@
 <div class="header-bar">
-  Philippians 4:6-7
+  <div class="header-bar-left" ng-click="navigate('verses')">
+    <i class="fa fa-chevron-left"></i>
+  </div>
+  <div class="header-bar-center">
+    Philippians 4:6-7
+  </div>
+  <div class="header-bar-right">
+  </div>
 </div>
 
 <div class="header-spacer"></div>
 
 <div class="verse-result-detail">
-  "Do not be anxious about anything, but in every situation,
-  by prayer and petition, with thanksgiving, present your requests to God.
-  And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus."
+  {{ verse }}
 </div>
+<!--<div class="verse-detail-keywords">
+  <b>Keywords:</b> peace, prayer
+</div>-->
