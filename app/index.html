@@ -14,6 +14,7 @@
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/verse-picker.css">
     <!-- endbuild -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   </head>
@@ -55,7 +56,7 @@
     <div class="spacer"></div>-->
 
     <div class="">
-      <div ng-view=""></div>
+      <div ui-view=""></div>
     </div>
 
     <!--<div class="footer">
@@ -77,14 +78,17 @@
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../bower_components/angular-touch/angular-touch.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/verses.js"></script>
     <script src="scripts/controllers/verse.js"></script>
+    <script src="scripts/directives/verse-picker.js"></script>
     <script src="scripts/services/data.js"></script>
     <!-- endbuild -->
 </body>

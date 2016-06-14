@@ -1,0 +1,27 @@
+<div class="add-verse-container">
+  <div class="add-verse-header">
+    <div class="add-verse-header-left" ng-click="backPicker()" ng-show="showChapters || showVerses">
+      <i class="fa fa-chevron-left"></i>
+    </div>
+    <div class="add-verse-header-text">
+      {{ pickerTitle }}
+    </div>
+    <div class="add-verse-exit" ng-click="closePicker()">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+  <div class="add-verse-subheader">
+    {{ pickerDirections }}
+  </div>
+  <div class="selection-area">
+    <div class="book-box" ng-repeat="book in books | orderBy: 'order'" ng-click="selectBook(book)" ng-show="showBooks">
+      {{ book.abbr }}
+    </div>
+    <div class="book-box" ng-repeat="chapter in pickerChapters" ng-click="selectChapter(chapter)" ng-show="showChapters">
+      {{ chapter }}
+    </div>
+    <div class="book-box" ng-repeat="verse in pickerVerses" ng-click="selectVerse(verse)" ng-show="showVerses">
+      {{ verse }}
+    </div>
+  </div>
+</div>

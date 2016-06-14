@@ -1,9 +1,9 @@
 <div class="header-bar">
-  <div class="header-bar-left" ng-click="navigate('verses')">
+  <div class="header-bar-left"  ui-sref="verses">
     <i class="fa fa-chevron-left"></i>
   </div>
   <div class="header-bar-center">
-    Philippians 4:6-7
+    {{ verseReference }}
   </div>
   <div class="header-bar-right">
   </div>
@@ -12,7 +12,7 @@
 <div class="header-spacer"></div>
 
 <div class="verse-result-detail">
-  {{ verse }}
+  {{ verseText }}
 </div>
 <!--<div class="verse-detail-keywords">
   <b>Keywords:</b> peace, prayer

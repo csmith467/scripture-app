@@ -14,31 +14,58 @@ angular.module('scriptureApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      })
-      .when('/verses', {
-        templateUrl: 'views/verses.html',
-        controller: 'VersesCtrl'
-      })
-      .when('/verse', {
-        templateUrl: 'views/verse.html',
-        controller: 'VerseCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .run(['$rootScope', '$state', '$cookies', function($rootScope, $state, $cookies) {
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+      var requireLogin = toState.data.requireLogin;
+      if (requireLogin && typeof $cookies.get("passcode") === 'undefined') {
+        event.preventDefault();
+        $state.go("login");
+      }
+    });
+    
+  }])
+  .config(function ($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise("/login");
+
+    $stateProvider
+    .state('login', {
+      url: "/login",
+      templateUrl: 'views/login.html',
+      controller: 'LoginCtrl',
+      data: {
+        requireLogin: false
+      }
+    })
+    .state('home', {
+      url: "/",
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      data: {
+        requireLogin: true
+      }
+    })
+    .state('verse', {
+      url: "/verse/:id",
+      templateUrl: 'views/verse.html',
+      controller: 'VerseCtrl',
+      params: {
+        id: null
+      },
+      data: {
+        requireLogin: true
+      }
+    })
+    .state('verses', {
+      url: "/verses",
+      templateUrl: 'views/verses.html',
+      controller: 'VersesCtrl',
+      data: {
+        requireLogin: true
+      }
+    });
   });

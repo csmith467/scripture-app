@@ -1,11 +1,12 @@
 <div class="header-bar">
-  <div class="header-bar-left" ng-click="navigate('verses')">
+  <div class="header-bar-left" ui-sref="home">
     <i class="fa fa-chevron-left"></i>
   </div>
   <div class="header-bar-center">
      My Verses
   </div>
-  <div class="header-bar-right">
+  <div class="header-bar-right" ng-click="showPicker()">
+    <i class="fa fa-plus"></i>
   </div>
 </div>
 
@@ -18,9 +19,11 @@
   </div>
 </div>
 
-<div class="verse-result" ng-repeat="verse in verses" ng-click="goToVerse(verse._id)">
+<div class="verse-result" ng-repeat="verse in verses" ui-sref="verse({ id: verse._id })">
   <div class="verse-result-desc">{{ verse.book }} {{ verse.chapter }}:{{ verse.verse }}</div>
   <div class="verse-result-arrow">
     <i class="fa fa-chevron-right"></i>
   </div>
 </div>
+
+<verse-picker></verse-picker>
