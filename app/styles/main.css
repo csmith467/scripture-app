@@ -157,3 +157,22 @@ div {
   margin-top:12px;
   font-size: 12px;
 }
+
+.message-bar {
+  position: fixed;
+  bottom:-50px;
+  right:0px;
+  left: 0px;
+  height:50px;
+  padding-top:12px;
+  color:#FFF;
+  background: #F44336;
+  font-size: 16px;
+  text-align: center;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
+}
+
+.message-bar-show {
+  bottom:0px;
+}
